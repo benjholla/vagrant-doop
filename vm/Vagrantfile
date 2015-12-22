@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
 
     echo "Installing some required packages in the VM"
     apt-get update -qq
-    apt-get install -qq -y openjdk-7-jre vim-tiny nginx make mercurial
+    apt-get install -qq -y openjdk-7-jdk vim-tiny nginx make mercurial
 
     echo "Extracting the LogicBlox tarball"
     mkdir -p /opt
