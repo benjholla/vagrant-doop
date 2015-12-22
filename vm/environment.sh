@@ -21,8 +21,8 @@ export JRE_LIB=/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/
 
 # setup Doop environment
 export DOOP_HOME=${dir}/doop/
-export DOOP_JRE_LIB=${dir}/doop-benchmarks/benchmarks/JREs/
-export DOOP_EXTERNALS=${dir}/doop-benchmarks/benchmarks/JREs
+export DOOP_JRE_LIB=${dir}/doop-benchmarks/JREs/
+export DOOP_EXTERNALS=${dir}/doop-benchmarks/JREs
 
 # add Doop tools to environment path
 PATH=$PATH:/vagrant/doop-tools/bin
