@@ -7,4 +7,5 @@ This repository contains a Vagrant configuration with support for the Doop Java 
 ## Setup
 1. Download and install [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www.vagrantup.com/) for your host machine.
 2. Clone this repository `git clone https://github.com/benjholla/vagrant-doop.git` on your host machine.
-3. On the command line, navigate to the `vm` directory of the cloned `vagrant-doop` respository and run `vagrant up`.
+3. Download the LogicBlox version 3 tar file and place it in the `vagrant-doop/vm` directory. If the version of LogicBlox does not match `3.10.29` then edit the value of `LB_VERSION` in the [environment.sh](https://github.com/benjholla/vagrant-doop/blob/master/vm/environment.sh) file. Note that currently Doop does not support LogicBlox version 4!
+4. On the command line, navigate to the `vm` directory of the cloned `vagrant-doop` respository and run `vagrant up`.
