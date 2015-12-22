@@ -61,8 +61,8 @@ Vagrant.configure("2") do |config|
     fi
 
     echo "Configuring Doop..."
-    hg clone https://bitbucket.org/yanniss/doop /home/vagrant/doop
-    source /home/vagrant/environment.sh
+    hg clone https://bitbucket.org/yanniss/doop /vagrant/doop
+    source /vagrant/environment.sh
 eos
 
   # Map port 8080 in the VM to the host's port 8080
