@@ -62,7 +62,10 @@ Vagrant.configure("2") do |config|
 
     echo "Configuring Doop..."
     hg clone https://bitbucket.org/yanniss/doop /vagrant/doop
-    source /vagrant/environment.sh
+    hg clone https://bitbucket.org/yanniss/doop-tools /vagrant/doop-tools
+    
+    # TODO: need to make environment variables permanent...see https://stackoverflow.com/questions/24707986/create-linux-environment-variable-using-vagrant-provisioner
+    # source /vagrant/environment.sh
 eos
 
   # Map port 8080 in the VM to the host's port 8080
