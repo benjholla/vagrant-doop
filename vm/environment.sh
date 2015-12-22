@@ -4,7 +4,8 @@
 echo "Setting LogicBlox and DOOP environment..."
 dir=$(readlink -f $(dirname ${BASH_SOURCE[0]}))
 
-# LogicBlox version, note: Doop does not support LogicBlox version 4
+# LogicBlox version
+# note that Doop does not support LogicBlox version 4!
 LB_VERSION=3.10.29
 
 # setup LogicBlox environment
