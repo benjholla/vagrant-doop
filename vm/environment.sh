@@ -4,11 +4,15 @@
 echo "Setting LogicBlox and DOOP environment..."
 dir=$(readlink -f $(dirname ${BASH_SOURCE[0]}))
 
+# LogicBlox version
+# note that Doop does not support LogicBlox version 4!
+LB_VERSION=3.10.29
+
 # setup LogicBlox environment
 export LB_MEM="3G"
 export LB_MEM_NOWARN=1
 export LB_PAGER_FORCE_START=1
-export LOGICBLOX_HOME=${dir}/logicblox/logicblox
+export LOGICBLOX_HOME=${dir}/logicblox-$LB_VERSION/logicblox
 export PATH=${dir}/doop/tools/bin:$LOGICBLOX_HOME/bin:$PATH
 
 # setup Java environment
