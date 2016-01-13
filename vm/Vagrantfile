@@ -45,8 +45,13 @@ Vagrant.configure("2") do |config|
 
     echo "Downloading DOOP..."
     hg clone https://bitbucket.org/yanniss/doop
+    chown -R vagrant:vagrant /home/vagrant/doop
+    
     hg clone https://bitbucket.org/yanniss/doop-benchmarks
+    chown -R vagrant:vagrant /home/vagrant/doop-benchmarks
+    
     hg clone https://bitbucket.org/yanniss/doop-tools
+    chown -R vagrant:vagrant /home/vagrant/doop-tools
     
     # TODO: need to make environment variables permanent...see https://stackoverflow.com/questions/24707986/create-linux-environment-variable-using-vagrant-provisioner
     # source /home/vagrant/environment.sh
