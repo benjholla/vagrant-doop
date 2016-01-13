@@ -11,10 +11,12 @@ This repository contains a Vagrant configuration with support for the Doop Java 
 
 3. Download the LogicBlox version 3 tar file and place it in the `vagrant-doop/vm` directory. If the version of LogicBlox does not match `3.10.29` then edit the value of `LB_VERSION` in the [environment.sh](https://github.com/benjholla/vagrant-doop/blob/master/vm/environment.sh) file. Note that currently Doop does not support LogicBlox version 4!
 
-4. On the command line, navigate to the `vm` directory of the cloned `vagrant-doop` respository and run `vagrant up`.
+4. DOOP can be a very memory intensive application.  The recommended amount of memory for DOOP is 8-16 gigabytes of memory.  You may need to increase or decrease the memory settings (depending on your needs) in the [environment.sh](https://github.com/benjholla/vagrant-doop/blob/master/vm/environment.sh#L12) for LogicBlox and in the [Vagrantfile](https://github.com/benjholla/vagrant-doop/blob/master/vm/Vagrantfile#L24) for the virtual machine itself.
 
-5. After the Vagrant VM is finished setting up run `vagrant ssh` to ssh to the machine.  To exit from ssh session run `exit` in the Vagrant VM. To halt the VM run `vagrant halt` from the host machine.  To remove the VM from the host run `vagrant destroy`.
+5. On the command line, navigate to the `vm` directory of the cloned `vagrant-doop` respository and run `vagrant up`.
 
-6. After running `vagrant ssh` to get a session on the Vagrant VM, ensure you are in the `/home/vagrant/` directory and then set the LogicBlox and Doop environment variables by running `source environment.sh`.
+6. After the Vagrant VM is finished setting up run `vagrant ssh` to ssh to the machine.  To exit from ssh session run `exit` in the Vagrant VM. To halt the VM run `vagrant halt` from the host machine.  To remove the VM from the host run `vagrant destroy`.
 
-7. To test Doop with the [Doop PLDI 2015 Tutorial](https://plast-lab.github.io/doop-pldi15-tutorial/) example navigate within the Vagrant VM to `/home/vagrant/examples/` and run `mkjar Example.java` to compile the example.  Next navigate to `/home/vagrant/doop/` and process the bytecode by running `./doop -a naive -j ../examples/Example.jar -Xstats:none`. Finally query the results by running `bloxbatch -db last-analysis -query '_(?var, ?heap) <- VarPointsTo(?var, ?heap), Var:DeclaringMethod(?var, "<Example: void morePlay(Cat)>").'`. For more details on running Doop see the tutorial.
+7. After running `vagrant ssh` to get a session on the Vagrant VM, ensure you are in the `/home/vagrant/` directory and then set the LogicBlox and Doop environment variables by running `source environment.sh`.
+
+8. To test Doop with the [Doop PLDI 2015 Tutorial](https://plast-lab.github.io/doop-pldi15-tutorial/) example navigate within the Vagrant VM to `/home/vagrant/examples/` and run `mkjar Example.java` to compile the example.  Next navigate to `/home/vagrant/doop/` and process the bytecode by running `./doop -a naive -j ../examples/Example.jar -Xstats:none`. Finally query the results by running `bloxbatch -db last-analysis -query '_(?var, ?heap) <- VarPointsTo(?var, ?heap), Var:DeclaringMethod(?var, "<Example: void morePlay(Cat)>").'`. For more details on running Doop see the tutorial.
