@@ -35,18 +35,17 @@ Vagrant.configure("2") do |config|
     apt-get install -qq -y openjdk-7-jdk vim-tiny nginx make mercurial
 
     # move files into the home directory
-    mv /vagrant/logicblox-*.tar.gz /home/vagrant/logicblox-*.tar.gz
     mv /vagrant/examples /home/vagrant/examples
     mv /vagrant/environment.sh /home/vagrant/environment.sh
 
     echo "Extracting the LogicBlox tarball"
     cd /home/vagrant
-    tar xzf logicblox-*.tar.gz
+    tar xzf logicblox-*.tar.gz -C /home/vagrant/logicblox
 
     echo "Downloading DOOP..."
-    hg clone https://bitbucket.org/yanniss/doop /vagrant/doop
-    hg clone https://bitbucket.org/yanniss/doop-benchmarks /vagrant/doop-benchmarks
-    hg clone https://bitbucket.org/yanniss/doop-tools /vagrant/doop-tools
+    hg clone https://bitbucket.org/yanniss/doop
+    hg clone https://bitbucket.org/yanniss/doop-benchmarks
+    hg clone https://bitbucket.org/yanniss/doop-tools
     
     # TODO: need to make environment variables permanent...see https://stackoverflow.com/questions/24707986/create-linux-environment-variable-using-vagrant-provisioner
     # source /home/vagrant/environment.sh
