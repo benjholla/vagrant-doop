@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
 
     echo "Extracting the LogicBlox tarball"
     cd /home/vagrant
-    tar xzf /vagrant/logicblox-*.tar.gz
+    tar xzf logicblox-*.tar.gz
 
     echo "Downloading DOOP..."
     hg clone https://bitbucket.org/yanniss/doop /vagrant/doop
