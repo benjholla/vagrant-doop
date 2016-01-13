@@ -1,1 +1,12 @@
+# OS Files
 .DS_Store
+Thumbs.db
+
+# don't commit proprietary logicblox files
+logicblox-*/
+logicblox-*.tar.gz
+
+# don't commit doop repos
+doop/
+doop-tools/
+doop-benchmarks/
