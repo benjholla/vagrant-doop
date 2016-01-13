@@ -9,7 +9,7 @@ This repository contains a Vagrant configuration with support for the Doop Java 
 
 2. Clone this repository `git clone https://github.com/benjholla/vagrant-doop.git` on your host machine.
 
-3. Download the LogicBlox version 3 tar file and place it in the `vagrant-doop/vm` directory. If the version of LogicBlox does not match `3.10.29` then edit the value of `LB_VERSION` in the [environment.sh](https://github.com/benjholla/vagrant-doop/blob/master/vm/environment.sh) file. Note that currently Doop does not support LogicBlox version 4!
+3. Download the LogicBlox version 3 tar file and place it in the `vagrant-doop/vm` directory. If the version of LogicBlox does not match `3.10.29` then edit the value of `LB_VERSION` in the [environment.sh](https://github.com/benjholla/vagrant-doop/blob/master/vm/environment.sh#L9) file. Note that currently Doop does not support LogicBlox version 4!
 
 4. DOOP can be a very memory intensive application.  The recommended amount of memory for DOOP is 8-16 gigabytes of memory.  You may need to increase or decrease the memory settings (depending on your needs) in the [environment.sh](https://github.com/benjholla/vagrant-doop/blob/master/vm/environment.sh#L12) for LogicBlox and in the [Vagrantfile](https://github.com/benjholla/vagrant-doop/blob/master/vm/Vagrantfile#L24) for the virtual machine itself.
 
